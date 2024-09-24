@@ -79,9 +79,6 @@ def run_circle():
 def run_triangle():
     print('TRINAGLE')
     tx, ty = 0, 0
-    #run_right_side()
-    #run_bottom()
-    #run_left_side()
     while(tx<300):
         clear_canvas_now()
         boy.draw_now(400+tx, 90)
