@@ -1,4 +1,5 @@
 from pico2d import *
+import math
 
 open_canvas()
 
@@ -13,9 +14,20 @@ def run_rectangle():
 def run_circle():
     print('CIRCLE')
 
-    clear_canvas_now()
-    boy.draw_now(400, 300)
-    delay(1)
+    r, cx, cy =300, 800//2, 600//2  #파이썬은 이렇게 쓴다
+    
+    '''
+    cx = 800//2     #화면의 크기가 800 600이기 때문에 이렇게 쓴다
+    cy = 600//2
+    '''
+    
+    for d in range(0,360):   #d 값은 0부터 359까지
+        x= r*math.cos(math.radians(d)) + cx
+        y= r*math.sin(math.radians(d)) + cy
+    
+        clear_canvas_now()
+        boy.draw_now(x, y)
+        delay(0.01)
 
     
     pass
