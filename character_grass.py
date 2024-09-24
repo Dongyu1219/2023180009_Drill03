@@ -10,21 +10,27 @@ boy = load_image('character.png')
 def draw_boy(x, y):
     clear_canvas_now()
     boy.draw_now(x, y)
-    delay(0.01)
+    delay(0.001)
     
 def run_top():
     print('TOP')
-    for x in range(0, 800):
+    for x in range(0, 700):
         draw_boy(x,550)
     pass
 def run_right():
     print('RIGHT')
+    for y in range(550, 0, -1):
+        draw_boy(700, y)
     pass
 def run_bottom():
     print('BOTTOM')
+    for x in range(700 , 0 , -1):
+        draw_boy(x ,0)
     pass
 def run_left():
     print('LEFT')
+    for y in range(0, 550):
+        draw_boy(0, y)
     pass
 
 def run_rectangle():
@@ -58,6 +64,7 @@ while True:
     #하수: 함수 정의 -> 함수 호출
     run_circle()
     run_rectangle()
+    run_triangle()
     break
     
 close_canvas()
