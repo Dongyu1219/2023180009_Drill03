@@ -7,8 +7,15 @@ open_canvas()
 grass = load_image('grass.png')
 boy = load_image('character.png')
 
+def draw_boy(x, y):
+    clear_canvas_now()
+    boy.draw_now(x, y)
+    delay(0.01)
+    
 def run_top():
     print('TOP')
+    for x in range(0, 800):
+        draw_boy(x,550)
     pass
 def run_right():
     print('RIGHT')
@@ -41,10 +48,7 @@ def run_circle():
     for d in range(0,360):   #d 값은 0부터 359까지
         x= r*math.cos(math.radians(d)) + cx
         y= r*math.sin(math.radians(d)) + cy
-    
-        clear_canvas_now()
-        boy.draw_now(x, y)
-        delay(0.01)
+        draw_boy(x, y)
 
     pass
 
@@ -52,7 +56,7 @@ while True:
     #탑다운 설계(하향식 설계)
     #고수: 함수 호출 -> 함수 정의
     #하수: 함수 정의 -> 함수 호출
-    #run_circle()
+    run_circle()
     run_rectangle()
     break
     
