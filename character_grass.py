@@ -52,7 +52,7 @@ while True:
     #탑다운 설계(하향식 설계)
     #고수: 함수 호출 -> 함수 정의
     #하수: 함수 정의 -> 함수 호출
-    run_circle()
+    #run_circle()
     run_rectangle()
     break
     
